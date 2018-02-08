@@ -1,0 +1,17 @@
+{
+  "name": "3h-join",
+  "version": "1.0.0",
+  "description": "A simple lib to join the body of streams ( and maybe parse it ).",
+  "main": "3h-join.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "body",
+    "stream",
+    "join",
+    "3h"
+  ],
+  "author": "3h",
+  "license": "MIT"
+}
