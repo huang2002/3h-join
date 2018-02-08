@@ -2,6 +2,10 @@
   "name": "3h-join",
   "version": "1.0.0",
   "description": "A simple lib to join the body of streams ( and maybe parse it ).",
+  "repository": {
+    "type": "GitHub",
+    "url": "https://github.com/huang2002/3h-join"
+  },
   "main": "3h-join.js",
   "scripts": {
     "test": "node test/test.js"
