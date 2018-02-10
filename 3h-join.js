@@ -7,7 +7,7 @@ const query = require('querystring');
 
 /**
  * @description To join text body.
- * @param {ReadableStream} input The input stream.
+ * @param {stream.Readable} input The input stream.
  * @param {(err: Error, data: string) => void} callback The callback function.
  */
 const text = (input, callback) => {
@@ -23,7 +23,7 @@ const text = (input, callback) => {
 
 /**
  * @description To join json body.
- * @param {ReadableStream} input The input stream.
+ * @param {stream.Readable} input The input stream.
  * @param {(err: Error, data: Object) => void} callback The callback function.
  */
 const json = (input, callback) => {
@@ -44,7 +44,7 @@ const json = (input, callback) => {
 
 /**
  * @description To join form body.
- * @param {ReadableStream} input The input stream.
+ * @param {stream.Readable} input The input stream.
  * @param {(err: Error, data: Object) => void} callback The callback function.
  */
 const form = (input, callback) => {
@@ -52,9 +52,6 @@ const form = (input, callback) => {
         if (err) {
             callback(err);
         } else {
-            if (data[0] === '?') {
-                data = data.slice(1);
-            }
             callback(null, query.parse(data));
         }
     });

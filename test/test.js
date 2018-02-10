@@ -29,13 +29,13 @@ const sever = http.createServer((req, res) => {
 const DATA = {
     json: '{ "msg": "This is the test data for json." }',
     text: 'This is the test data for text.',
-    form: '?test=true&target=join'
+    form: 'test=true&target=join'
 };
 
 const ANS = {
     json: JSON.parse(DATA.json),
     text: DATA.text,
-    form: query.parse(DATA.form.slice(1))
+    form: query.parse(DATA.form)
 };
 
 function test(tag) {

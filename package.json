@@ -1,6 +1,6 @@
 {
   "name": "3h-join",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple lib to join the body of streams ( and maybe parse it ).",
   "repository": {
     "type": "GitHub",

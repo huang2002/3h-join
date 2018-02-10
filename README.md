@@ -10,9 +10,9 @@ $ npm install 3h-join
 
 ## API
 
-- join.text(input: ReadableStream, callback: (err: Error, data: string) => void) - *To join the text body.*
-- join.json(input: ReadableStream, callback: (err: Error, obj: Object) => void) - *To join the json body.*
-- join.form(input: ReadableStream, callback: (err: Error, body: Object) => void) - *To join the form body.*
+- join.text(input: stream.Readable, callback: (err: Error, data: string) => void) - *To join the text body.*
+- join.json(input: stream.Readable, callback: (err: Error, obj: Object) => void) - *To join the json body.*
+- join.form(input: stream.Readable, callback: (err: Error, body: Object) => void) - *To join the form body.*
 
 ## Example
 
