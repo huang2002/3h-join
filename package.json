@@ -1,7 +1,8 @@
 {
   "name": "3h-join",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple lib to join the body of streams ( and maybe parse it ).",
+  "types": "3h-join.d.ts",
   "repository": {
     "type": "GitHub",
     "url": "https://github.com/huang2002/3h-join"
@@ -17,5 +18,8 @@
     "3h"
   ],
   "author": "3h",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^9.4.6"
+  }
 }

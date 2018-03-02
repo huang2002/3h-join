@@ -24,7 +24,7 @@ const text = (input, callback) => {
 /**
  * @description To join json body.
  * @param {stream.Readable} input The input stream.
- * @param {(err: Error, data: Object) => void} callback The callback function.
+ * @param {(err: Error, data: object) => void} callback The callback function.
  */
 const json = (input, callback) => {
     text(input, (err, data) => {
@@ -45,7 +45,7 @@ const json = (input, callback) => {
 /**
  * @description To join form body.
  * @param {stream.Readable} input The input stream.
- * @param {(err: Error, data: Object) => void} callback The callback function.
+ * @param {(err: Error, data: object) => void} callback The callback function.
  */
 const form = (input, callback) => {
     text(input, (err, data) => {

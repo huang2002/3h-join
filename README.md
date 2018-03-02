@@ -11,8 +11,8 @@ $ npm install 3h-join
 ## API
 
 - join.text(input: stream.Readable, callback: (err: Error, data: string) => void) - *To join the text body.*
-- join.json(input: stream.Readable, callback: (err: Error, obj: Object) => void) - *To join the json body.*
-- join.form(input: stream.Readable, callback: (err: Error, body: Object) => void) - *To join the form body.*
+- join.json(input: stream.Readable, callback: (err: Error, obj: object) => void) - *To join the json body.*
+- join.form(input: stream.Readable, callback: (err: Error, body: object) => void) - *To join the form body.*
 
 ## Example
 
@@ -59,3 +59,6 @@ http.createSever((req, res) => {
     reportError(err);
 }).listen(port);
 ```
+
+## ps
+`3h-join.d.ts` is specified in `package.json` for typescript users.
