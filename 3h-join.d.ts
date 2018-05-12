@@ -6,4 +6,4 @@ declare namespace join {
     export function form(input: stream.Readable, callback: (err: Error | null, body: object) => void): void;
 }
 
-export default join;
+export = join;
