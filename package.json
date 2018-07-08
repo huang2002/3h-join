@@ -1,25 +1,37 @@
 {
   "name": "3h-join",
-  "version": "1.0.4",
-  "description": "A simple lib to join the body of streams ( and maybe parse it ).",
-  "types": "3h-join.d.ts",
-  "repository": {
-    "type": "GitHub",
-    "url": "https://github.com/huang2002/3h-join"
-  },
-  "main": "3h-join.js",
+  "version": "2.0.0",
+  "description": "A stream body parser.",
+  "main": "dist/index.js",
+  "types": "typings/index.d.ts",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node test/test.js",
+    "prebuild": "DEL /Q /S dist\\*.* typings\\*.*",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huang2002/3h-join.git"
   },
   "keywords": [
-    "body",
     "stream",
+    "body",
     "join",
+    "parse",
+    "parser",
+    "text",
+    "json",
+    "form",
+    "urlencoded",
     "3h"
   ],
   "author": "3h",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huang2002/3h-join/issues"
+  },
+  "homepage": "https://github.com/huang2002/3h-join#readme",
   "devDependencies": {
-    "@types/node": "^9.4.6"
+    "@types/node": "^10.5.2"
   }
 }

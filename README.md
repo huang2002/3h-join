@@ -1,64 +1,34 @@
-# 3h-join.js
+# 3h-join
 
-> A simple lib to join the body of streams ( and maybe parse it ).
+A stream body parser.
 
-## Install
-
-```
-$ npm install 3h-join
-```
-
-## API
-
-- join.text(input: stream.Readable, callback: (err: Error, data: string) => void) - *To join the text body.*
-- join.json(input: stream.Readable, callback: (err: Error, obj: object) => void) - *To join the json body.*
-- join.form(input: stream.Readable, callback: (err: Error, body: object) => void) - *To join the form body.*
-
-## Example
+# Example
 
 ```javascript
-const join = require('3h-join'),
-    http = require('http');
-http.createSever((req, res) => {
-    if (req.method.toUpperCase() === 'POST') {
-        switch (req.headers['Content-Type']) {
-            case 'text/plain':
-                join.text(req, (err, data) => {
-                    if (err) {
-                        reportError(err);
-                    } else {
-                        receiveText(data);
-                    }
-                });
-                break;
-            case 'application/json':
-                join.json(req, (err, obj) => {
-                    if (err) {
-                        reportError(err);
-                    } else {
-                        receiveJson(obj);
-                    }
-                });
-                break;
-            case 'application/x-www-form-urlencoded':
-                join.form(req, (err, body) => {
-                    if (err) {
-                        reportError(err);
-                    } else {
-                        receiveForm(body);
-                    }
-                });
-                break;
-            default:
-                //...
-        }
+const join = require('3h-join');
+
+function callback(err, data) {
+    if (err) {
+        console.error('Error while reading stream: ', err);
     } else {
-        // ...
+        console.log(`Received: ${JSON.stringify(data)}`);
     }
-}).on('error', err => {
-    reportError(err);
-}).listen(port);
+}
+
+join.text({ stream: textStream }, callback);
+
+join.json({
+    stream: jsonStream,
+    // parser: myJSONParser
+}, callback);
+
+join.form({
+    stream: formStream,
+    // parser: myFormParser
+}, callback);
+
 ```
 
-## ps
-`3h-join.d.ts` is specified in `package.json` for typescript users.
+# APIs
+
+See [`the declaration file`](typings/index.d.ts) to learn the APIs.
